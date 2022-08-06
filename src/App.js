@@ -7,6 +7,7 @@ import RegisterView from './views/RegisterView';
 import NotFoundPage from './views/NotFoundPage';
 import LoginView from './views/LoginView';
 import PhonebookView from './views/PhonebookView';
+import LogoutView from './views/LogoutView';
 
 export default function App() {
   return (
@@ -14,10 +15,11 @@ export default function App() {
       <AppBar />
       <Suspense fallback={'Loading.....'}>
         <Routes>
-          <Route path="/" element={<PhonebookView />} />
-          <Route path="contatcs" element={<HomeView />} />
+          <Route path="/" element={<HomeView />} />
+          <Route path="contatcs" element={<PhonebookView />} />
           <Route path="register" element={<RegisterView />} />
           <Route path="login" element={<LoginView />} />
+          <Route path="logout" element={<LogoutView />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
