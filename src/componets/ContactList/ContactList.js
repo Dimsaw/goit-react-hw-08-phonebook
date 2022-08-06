@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useFetchContactsQuery } from '../../redux/contact_slice';
 import s from './ContactList.module.css';
-import ContactItem from 'componets/ContactItem';
+import ContactItem from '../ContactItem';
 
 const ContactList = ({ filter }) => {
   const { data, isFetching } = useFetchContactsQuery();
