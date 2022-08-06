@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { contactsApi } from './services';
+import { contactsApi } from './contactsApi';
 
 const initialState = {
   user: { name: null, email: null },
