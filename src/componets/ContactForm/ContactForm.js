@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {
   useFetchContactsQuery,
   useCreateContactMutation,
-} from '../../redux/contact_slice';
+} from '../../redux/contactsApi';
 
 import s from './ContactForm.module.css';
 

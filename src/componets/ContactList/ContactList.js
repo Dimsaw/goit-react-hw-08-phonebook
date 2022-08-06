@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useFetchContactsQuery } from '../../redux/contact_slice';
+import { useFetchContactsQuery } from '../../redux/contactsApi';
 import s from './ContactList.module.css';
 import ContactItem from '../ContactItem';
 

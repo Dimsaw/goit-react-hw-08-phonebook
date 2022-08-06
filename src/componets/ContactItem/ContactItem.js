@@ -1,4 +1,4 @@
-import { useDeleteContactMutation } from '../../redux/contact_slice';
+import { useDeleteContactMutation } from '../../redux/contactsApi';
 import s from './ContatcItem.module.css';
 import PropTypes from 'prop-types';
 import Notiflix from 'notiflix';
