@@ -1,6 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { contactsApi } from './contact_slice';
 
+import { persistStore } from 'redux-persist';
+
 import { setupListeners } from '@reduxjs/toolkit/query';
 
 export const store = configureStore({
@@ -15,3 +17,4 @@ export const store = configureStore({
 });
 
 setupListeners(store.dispatch);
+export const persistor = persistStore(store);

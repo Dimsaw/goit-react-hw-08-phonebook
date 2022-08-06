@@ -1,21 +1,20 @@
-import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
 import Navigation from '../Navigation';
+// import AuthNav from '../../componets/AuthNav';
+// import { Suspense } from 'react';
+// import { Outlet } from 'react-router-dom';
 
 export default function AppBar() {
   return (
     <>
       <header>
         <Navigation />
+        {/* {<AuthNav />} */}
       </header>
-      <main>
+      {/* <main>
         <Suspense fallback={<div>Loading...</div>}>
           <Outlet />
         </Suspense>
-      </main>
-      <footer>
-        <h2> © 2022 GitHub, Inc. Footer navigation Terms Privacy</h2>
-      </footer>
+      </main> */}
     </>
   );
 }

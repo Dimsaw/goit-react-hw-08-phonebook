@@ -11,15 +11,14 @@ import PhonebookView from './views/PhonebookView';
 export default function App() {
   return (
     <>
-      <Suspense fallback={<p>Loading...</p>}>
+      <AppBar />
+      <Suspense fallback={'Loading.....'}>
         <Routes>
-          <Route path="/" element={<AppBar />}>
-            <Route index element={<HomeView />} />
-            <Route path="/phonebook" element={<PhonebookView />} />
-            <Route path="/register" element={<RegisterView />} />
-            <Route path="/login" element={<LoginView />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
+          <Route path="/" element={<PhonebookView />} />
+          <Route path="contatcs" element={<HomeView />} />
+          <Route path="register" element={<RegisterView />} />
+          <Route path="login" element={<LoginView />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </>
