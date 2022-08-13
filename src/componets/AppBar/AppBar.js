@@ -1,20 +1,15 @@
 import Navigation from '../Navigation';
-// import AuthNav from '../../componets/AuthNav';
-// import { Suspense } from 'react';
-// import { Outlet } from 'react-router-dom';
+import AuthNav from '../../componets/AuthNav';
+import UserMenu from '../../componets/UserMenu';
+import { useSelector } from 'react-redux';
+import { getIsLoggedIn } from 'redux/contact_selector';
 
 export default function AppBar() {
+  const isLogeedIn = useSelector(getIsLoggedIn);
   return (
-    <>
-      <header>
-        <Navigation />
-        {/* {<AuthNav />} */}
-      </header>
-      {/* <main>
-        <Suspense fallback={<div>Loading...</div>}>
-          <Outlet />
-        </Suspense>
-      </main> */}
-    </>
+    <header>
+      <Navigation />
+      {isLogeedIn ? <UserMenu /> : <AuthNav />}
+    </header>
   );
 }
