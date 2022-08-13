@@ -15,7 +15,7 @@ export default function UserMenu() {
 
   return (
     <div>
-      <span>Hello, {name}</span>
+      <span>Hello, {name}!</span>
       <button type="button" onClick={() => exit()} disabled={isLoading}>
         {isLoading ? 'Log outing...' : 'Log out'} {''}
         <img

@@ -50,8 +50,8 @@ export default function LoginView() {
           required
         />
       </label>
-      <button variant="success" type="submit">
-        Login
+      <button variant="success" type="submit" disabled={isLoading}>
+        {isLoading ? 'Log ining...' : 'Log In'}
       </button>
     </form>
   );

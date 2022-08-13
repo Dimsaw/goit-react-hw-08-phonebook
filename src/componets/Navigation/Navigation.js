@@ -21,7 +21,7 @@ function Navigation() {
           to="contatcs"
           className={navData => (navData.isActive ? s.activeLink : s.link)}
         >
-          Phonebook
+          Contacts{' '}
         </NavLink>
       )}
     </nav>

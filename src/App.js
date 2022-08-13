@@ -7,12 +7,12 @@ import { useGetCurrentUserMutation } from './redux/contactsApi';
 import {
   PublicRoute,
   PrivateRoute,
-  CustomerRoute,
+  CustomRoute,
 } from './componets/CustomerRoute/CustomerRoute.js';
 // import Container from './componets/Container';
 import HomeView from './views/HomeView';
 import AppBar from './componets/AppBar/AppBar';
-import RegisterView from './views/RegisterView';
+import SignUp from './views/SignUp';
 // import NotFoundPage from './views/NotFoundPage';
 import LoginView from './views/LoginView';
 import PhonebookView from './views/PhonebookView';
@@ -37,7 +37,7 @@ export default function App() {
 
   return (
     (content || isSuccess || isError) && (
-      <>
+      <div>
         <AppBar />
         <Suspense fallback={'Loading.....'}>
           <Routes>
@@ -51,10 +51,10 @@ export default function App() {
             />
 
             <Route
-              path="register"
+              path="signUp"
               element={
                 <PublicRoute restricted>
-                  <RegisterView />
+                  <SignUp />
                 </PublicRoute>
               }
             />
@@ -75,10 +75,10 @@ export default function App() {
                 </PrivateRoute>
               }
             />
-            <Route path="*" element={<CustomerRoute restricted />} />
+            <Route path="*" element={<CustomRoute restricted />} />
           </Routes>
         </Suspense>
-      </>
+      </div>
     )
   );
 }

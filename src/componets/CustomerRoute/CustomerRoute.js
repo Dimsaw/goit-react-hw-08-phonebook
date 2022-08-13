@@ -4,16 +4,16 @@ import { getIsLoggedIn } from 'redux/contact_selector';
 
 export function PrivateRoute({ children }) {
   const isLoggedIn = useSelector(getIsLoggedIn);
-  return <> {isLoggedIn ? <Navigate to="/" /> : <Navigate to={'login'} />}</>;
+  return <>{isLoggedIn ? children : <Navigate to={'login'} />}</>;
 }
 
 export function PublicRoute({ children, restricted = false }) {
   const isLoggedIn = useSelector(getIsLoggedIn);
   const shouldRedirect = isLoggedIn && restricted;
-  return <>{shouldRedirect ? <Navigate to="/" /> : children}</>;
+  return <>{shouldRedirect ? <Navigate to={'login'} /> : children}</>;
 }
 
-export function CustomerRoute() {
+export function CustomRoute() {
   const isLoggedIn = useSelector(getIsLoggedIn);
-  return <> {isLoggedIn ? <Navigate to="/" /> : <Navigate to={'login'} />}</>;
+  return <>{isLoggedIn ? <Navigate to="/" /> : <Navigate to={'login'} />}</>;
 }
