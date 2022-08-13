@@ -1,27 +1,27 @@
-import { Suspense, useState, useEffect } from 'react';
+import React, { lazy, Suspense, useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import s from './App.module.css';
 
-import { getToken } from './redux/contact_selector';
-import { useGetCurrentUserMutation } from './redux/contactsApi';
-import {
-  PublicRoute,
-  PrivateRoute,
-  CustomRoute,
-} from './componets/CustomerRoute/CustomerRoute.js';
-// import Container from './componets/Container';
-import HomeView from './views/HomeView';
-import AppBar from './componets/AppBar/AppBar';
-import SignUp from './views/SignUp';
-// import NotFoundPage from './views/NotFoundPage';
-import LoginView from './views/LoginView';
-import PhonebookView from './views/PhonebookView';
-// import LogoutView from './views/LogoutView';
+import AppBar from './components/AppBar';
+import Loader from './components/Loader';
+import { PublicRoute, PrivateRoute, CustomRoute } from 'components/CustomRoute';
+
+import { useGetCurrentUserMutation } from 'redux/services';
+import { getToken } from 'redux/selectors';
+
+const Home = lazy(() => import('pages/Home/Home'));
+const SignUp = lazy(() => import('pages/SingUp/SignUp'));
+const LogIn = lazy(() => import('pages/LogIn/LogIn'));
+const Contacts = lazy(() => import('pages/Contacts/Contacts.js'));
 
 export default function App() {
   const [content, setContent] = useState(false);
   const token = useSelector(getToken);
-  const [fetchCurrentUser, { isSuccess, isError }] = useGetCurrentUserMutation;
+
+  const [fetchCurrentUser, { isSuccess, isError }] = useGetCurrentUserMutation({
+    skip: token,
+  });
 
   useEffect(() => {
     if (token) {
@@ -37,15 +37,15 @@ export default function App() {
 
   return (
     (content || isSuccess || isError) && (
-      <div>
+      <div className={s.mainContainer}>
         <AppBar />
-        <Suspense fallback={'Loading.....'}>
+        <Suspense fallback={<Loader />}>
           <Routes>
             <Route
               path="/"
               element={
                 <PublicRoute>
-                  <HomeView />
+                  <Home />
                 </PublicRoute>
               }
             />
@@ -58,23 +58,25 @@ export default function App() {
                 </PublicRoute>
               }
             />
+
             <Route
-              path="login"
+              path="logIn"
               element={
                 <PublicRoute restricted>
-                  <LoginView />
+                  <LogIn />
                 </PublicRoute>
               }
             />
 
             <Route
-              path="contatcs"
+              path="contacts"
               element={
                 <PrivateRoute restricted>
-                  <PhonebookView />
+                  <Contacts />
                 </PrivateRoute>
               }
             />
+
             <Route path="*" element={<CustomRoute restricted />} />
           </Routes>
         </Suspense>
