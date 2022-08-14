@@ -11,7 +11,7 @@ import { useGetCurrentUserMutation } from 'redux/services';
 import { getToken } from 'redux/selectors';
 
 const Home = lazy(() => import('pages/Home/Home'));
-const SignUp = lazy(() => import('pages/SingUp/SignUp'));
+const Register = lazy(() => import('pages/Register/Register'));
 const LogIn = lazy(() => import('pages/LogIn/LogIn'));
 const Contacts = lazy(() => import('pages/Contacts/Contacts.js'));
 
@@ -51,16 +51,16 @@ export default function App() {
             />
 
             <Route
-              path="signUp"
+              path="register"
               element={
                 <PublicRoute restricted>
-                  <SignUp />
+                  <Register />
                 </PublicRoute>
               }
             />
 
             <Route
-              path="logIn"
+              path="login"
               element={
                 <PublicRoute restricted>
                   <LogIn />

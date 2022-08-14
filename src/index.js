@@ -8,11 +8,12 @@ import './index.css';
 import { store, persistor } from './redux/store';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
+import Loader from './components/Loader';
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <PersistGate persistor={persistor}>
+      <PersistGate loading={<Loader />} persistor={persistor}>
         <BrowserRouter basename="/goit-react-hw-08-phonebook">
           <App />
         </BrowserRouter>

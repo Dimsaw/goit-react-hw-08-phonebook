@@ -2,7 +2,6 @@ import { NavLink } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 import { getIsLoggedIn } from 'redux/selectors';
-import React from 'react';
 
 import s from './Navigation.module.css';
 
@@ -18,7 +17,7 @@ function Navigation() {
       </NavLink>
       {isLoggedIn && (
         <NavLink
-          to="contatcs"
+          to="contacts"
           className={navData => (navData.isActive ? s.activeLink : s.link)}
         >
           Contacts{' '}
