@@ -1,10 +1,11 @@
 import { useSelector } from 'react-redux';
 import { getIsLoggedIn } from 'redux/selectors';
+import s from './Home.module.css';
 
 const Home = () => {
   const isLoggedIn = useSelector(getIsLoggedIn);
   return (
-    <div>
+    <div className={s.home}>
       {!isLoggedIn ? (
         <h1>
           Hello, welcome to our simple phonebook service. If it's your first

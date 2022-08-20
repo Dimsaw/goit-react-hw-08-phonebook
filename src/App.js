@@ -37,50 +37,55 @@ export default function App() {
 
   return (
     (content || isSuccess || isError) && (
-      <div className={s.mainContainer}>
-        <AppBar />
-        <Suspense fallback={<Loader />}>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <PublicRoute>
-                  <Home />
-                </PublicRoute>
-              }
-            />
+      <>
+        <div className={s.mainContainer}>
+          <AppBar />
+          <Suspense fallback={<Loader />}>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <PublicRoute>
+                    <Home />
+                  </PublicRoute>
+                }
+              />
 
-            <Route
-              path="register"
-              element={
-                <PublicRoute restricted>
-                  <Register />
-                </PublicRoute>
-              }
-            />
+              <Route
+                path="register"
+                element={
+                  <PublicRoute restricted>
+                    <Register />
+                  </PublicRoute>
+                }
+              />
 
-            <Route
-              path="login"
-              element={
-                <PublicRoute restricted>
-                  <LogIn />
-                </PublicRoute>
-              }
-            />
+              <Route
+                path="login"
+                element={
+                  <PublicRoute restricted>
+                    <LogIn />
+                  </PublicRoute>
+                }
+              />
 
-            <Route
-              path="contacts"
-              element={
-                <PrivateRoute restricted>
-                  <Contacts />
-                </PrivateRoute>
-              }
-            />
+              <Route
+                path="contacts"
+                element={
+                  <PrivateRoute restricted>
+                    <Contacts />
+                  </PrivateRoute>
+                }
+              />
 
-            <Route path="*" element={<CustomRoute restricted />} />
-          </Routes>
-        </Suspense>
-      </div>
+              <Route path="*" element={<CustomRoute restricted />} />
+            </Routes>
+          </Suspense>
+        </div>
+        <footer className={s.footer}>
+          <h2> © 2022 GitHub, Inc. Footer navigation Terms Privacy</h2>
+        </footer>
+      </>
     )
   );
 }

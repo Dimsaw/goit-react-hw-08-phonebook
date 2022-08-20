@@ -3,6 +3,8 @@ import { useSignUpMutation } from 'redux/services';
 
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+import s from './Register.module.css';
+
 export default function SignUp() {
   const [params, setParams] = useState({ name: '', email: '', password: '' });
   const [signUp, { isLoading }] = useSignUpMutation();
@@ -30,7 +32,7 @@ export default function SignUp() {
     setParams({ name: '', email: '', password: '' });
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={s.form} onSubmit={handleSubmit}>
       <h1>Create your account</h1>
       <div>
         <label>
