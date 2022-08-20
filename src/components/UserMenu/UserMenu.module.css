@@ -1,0 +1,27 @@
+.logout {
+  display: block;
+}
+
+.logout__text {
+  margin-right: 10px;
+}
+
+.btn {
+  margin: 0px;
+  cursor: pointer;
+  background-color: rgb(253, 212, 124);
+  border: none;
+  border-radius: 7px;
+  width: 120px;
+  height: 30px;
+}
+
+.btn:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+  background-color: #00bfff;
+}
+
+.btn__text {
+  margin-bottom: 5px;
+}
