@@ -33,35 +33,46 @@ export default function LogIn() {
   };
 
   return (
-    <form className={s.form} onSubmit={handleSubmit}>
-      <h1>Log in your account</h1>
-      <label>
-        Email
-        <input
-          type="email"
-          name="email"
-          value={params.email}
-          onChange={handleChange}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type="password"
-          name="password"
-          value={params.password}
-          onChange={handleChange}
-          pattern=".{7,}"
-          title="At least 7 characters in length. Wasn't your password \'password123\'? 🤫"
-          required
-        />
-      </label>
-      <div className="mb-2">
-        <button variant="success" type="submit" size="lg" disabled={isLoading}>
+    <main className={s.mainContainer}>
+      <form className={s.form} onSubmit={handleSubmit}>
+        <h1 className={s.text}>Log in your account</h1>
+        <label className={s.label}>
+          <span className={s.text__email}>Email</span>
+
+          <input
+            className={s.input}
+            type="email"
+            name="email"
+            value={params.email}
+            onChange={handleChange}
+            required
+          />
+        </label>
+        <label className={s.label}>
+          <span className={s.text__password}> Password</span>
+
+          <input
+            className={s.input}
+            type="password"
+            name="password"
+            value={params.password}
+            onChange={handleChange}
+            pattern=".{7,}"
+            title="At least 7 characters in length. Wasn't your password \'password123\'? 🤫"
+            required
+          />
+        </label>
+
+        <button
+          className={s.btn}
+          variant="success"
+          type="submit"
+          size="lg"
+          disabled={isLoading}
+        >
           {isLoading ? 'Log ining...' : 'Log In'}
         </button>
-      </div>
-    </form>
+      </form>
+    </main>
   );
 }

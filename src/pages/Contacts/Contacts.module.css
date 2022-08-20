@@ -24,6 +24,9 @@
 .label {
   margin: 15px;
 }
+.text {
+  text-align: center;
+}
 
 .text__number {
   margin-right: 10px;

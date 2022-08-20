@@ -1,3 +1,51 @@
-.form {
+.mainContainer {
+  display: flex;
+  justify-content: center;
   min-height: 75vh;
+  margin: 0px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  max-width: 400px;
+  max-height: 195px;
+  border-radius: 6px;
+  border: 1px solid rgb(133, 131, 131);
+}
+
+.label {
+  margin: 15px;
+}
+
+.text {
+  margin: 15px;
+
+  text-align: center;
+}
+
+.text__email {
+  margin-right: 56px;
+}
+.text__password {
+  margin-right: 25px;
+}
+
+.btn {
+  margin: 0 auto;
+  padding: 5px 0;
+
+  width: 80px;
+
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: bisque;
+}
+
+.btn:hover {
+  background-color: cornflowerblue;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
