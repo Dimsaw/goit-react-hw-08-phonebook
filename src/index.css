@@ -20,10 +20,6 @@ ul {
   padding: 0;
 }
 
-/* :root {
-  max-width: 450px;
-  max-height: 5000px;
-  margin: 50px auto 50px auto;
-  padding: 40px 50px 40px 50px;
-  border: 1px solid rgb(80, 73, 73);
-} */
+:root {
+  background-color: #ffebcd;
+}

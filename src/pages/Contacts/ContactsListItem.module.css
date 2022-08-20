@@ -1,18 +1,24 @@
 .item {
   display: flex;
   justify-content: space-between;
+
+  max-width: 350px;
+  margin: 0px auto;
 }
 
 .item:not(:last-child) {
   margin-bottom: 10px;
 }
+.text {
+  margin: 0px;
+}
 
 .btn {
-  margin-left: 20px;
+  margin: 0px;
   cursor: pointer;
-  background-color: darkgrey;
+  background-color: rgb(253, 212, 124);
   border: none;
-  border-radius: 3px;
+  border-radius: 7px;
   width: 80px;
   height: 30px;
 }

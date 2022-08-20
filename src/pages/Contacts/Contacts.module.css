@@ -18,6 +18,7 @@
   max-height: 200px;
   border-radius: 6px;
   border: 1px solid rgb(133, 131, 131);
+  margin: auto;
   margin-bottom: 20px;
 }
 
@@ -44,7 +45,7 @@
   border-radius: 10px;
   cursor: pointer;
   border: none;
-  background-color: bisque;
+  background-color: rgb(253, 212, 124);
 }
 
 .btn:hover {

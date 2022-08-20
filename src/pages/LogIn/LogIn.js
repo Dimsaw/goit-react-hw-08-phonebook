@@ -67,7 +67,6 @@ export default function LogIn() {
           className={s.btn}
           variant="success"
           type="submit"
-          size="lg"
           disabled={isLoading}
         >
           {isLoading ? 'Logining...' : 'Login'}
