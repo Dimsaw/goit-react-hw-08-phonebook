@@ -3,6 +3,8 @@ import { useLogInMutation } from 'redux/services';
 
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+import s from './Login.module.css';
+
 export default function LogIn() {
   const [params, setParams] = useState({ email: '', password: '' });
 
@@ -31,7 +33,7 @@ export default function LogIn() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={s.form} onSubmit={handleSubmit}>
       <h1>Log in your account</h1>
       <label>
         Email

@@ -7,6 +7,8 @@ import ContactsListItem from '../Contacts/ContactsListItem';
 import Filter from 'components/Filter';
 import Loader from 'components/Loader';
 
+import s from './Contacts.module.css';
+
 export default function Contacts() {
   const [params, setParams] = useState({ name: '', number: '' });
 
@@ -30,12 +32,13 @@ export default function Contacts() {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <h1 className="title">Contact</h1>
-        <label>
-          Name
+    <div className={s.container}>
+      <form className={s.form} onSubmit={handleSubmit}>
+        <h1 className={s.text}>Phonebook</h1>
+        <label className={s.label}>
+          <span className={s.text__name}>Name</span>
           <input
+            className={s.input}
             type="name"
             name="name"
             value={params.name}
@@ -45,9 +48,10 @@ export default function Contacts() {
             required
           />
         </label>
-        <label>
-          Number
+        <label className={s.label}>
+          <span className={s.text__number}>Number</span>
           <input
+            className={s.input}
             type="tel"
             name="number"
             value={params.number}
@@ -57,7 +61,7 @@ export default function Contacts() {
             required
           />
         </label>
-        <button type="submit" disabled={isAdding}>
+        <button className={s.btn} type="submit" disabled={isAdding}>
           {isAdding ? 'Adding...' : 'Add to contacts'}
         </button>
       </form>
@@ -85,6 +89,6 @@ export default function Contacts() {
           )}
         </>
       )}
-    </>
+    </div>
   );
 }
