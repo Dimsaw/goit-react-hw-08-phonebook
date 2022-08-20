@@ -81,10 +81,13 @@ export default function App() {
               <Route path="*" element={<CustomRoute restricted />} />
             </Routes>
           </Suspense>
+          <footer className={s.footer}>
+            <h2 className={s.footer__text}>
+              {' '}
+              © 2022 GitHub, Inc. Footer navigation Terms Privacy
+            </h2>
+          </footer>
         </div>
-        <footer className={s.footer}>
-          <h2> © 2022 GitHub, Inc. Footer navigation Terms Privacy</h2>
-        </footer>
       </>
     )
   );

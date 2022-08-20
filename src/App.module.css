@@ -4,7 +4,7 @@
   margin-right: auto;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 15px;
+
   background-color: blanchedalmond;
 }
 
@@ -19,4 +19,12 @@
 .contacts {
   margin: 0px;
   margin-bottom: 20px;
+}
+
+.footer {
+  margin-bottom: 15px;
+}
+
+.footer__text {
+  margin: 0px;
 }

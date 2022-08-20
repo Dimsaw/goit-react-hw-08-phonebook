@@ -1,3 +1,9 @@
 .home {
   min-height: 75vh;
 }
+
+.text {
+  font-size: 35px;
+  font-weight: 600px;
+  color: black;
+}

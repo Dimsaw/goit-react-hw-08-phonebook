@@ -14,7 +14,7 @@ export default function AuthNav() {
         to="login"
         className={navData => (navData.isActive ? s.activeLink : s.link)}
       >
-        Log In
+        Login
       </NavLink>
     </div>
   );

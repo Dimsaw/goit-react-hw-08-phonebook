@@ -32,12 +32,15 @@ export default function SignUp() {
     setParams({ name: '', email: '', password: '' });
   };
   return (
-    <form className={s.form} onSubmit={handleSubmit}>
-      <h1>Create your account</h1>
-      <div>
-        <label>
-          Name
+    <main className={s.mainContainer}>
+      <form className={s.form} onSubmit={handleSubmit}>
+        <h1 className={s.text}>Create your account</h1>
+
+        <label className={s.label}>
+          <span className={s.text__name}>Name</span>
+
           <input
+            className={s.input}
             type="text"
             name="name"
             value={params.name}
@@ -47,9 +50,11 @@ export default function SignUp() {
             required
           />
         </label>
-        <label>
-          Email
+        <label className={s.label}>
+          <span className={s.text__email}>Email</span>
+
           <input
+            className={s.input}
             type="email"
             name="email"
             value={params.email}
@@ -57,9 +62,11 @@ export default function SignUp() {
             required
           />
         </label>
-        <label>
-          Password
+        <label className={s.label}>
+          <span className={s.text__password}>Password</span>
+
           <input
+            className={s.input}
             type="password"
             name="password"
             value={params.password}
@@ -69,10 +76,10 @@ export default function SignUp() {
             required
           />
         </label>
-        <button type="submit" disabled={isLoading}>
+        <button className={s.btn} type="submit" disabled={isLoading}>
           {isLoading ? 'Loading...' : 'Accept'}
         </button>
-      </div>
-    </form>
+      </form>
+    </main>
   );
 }

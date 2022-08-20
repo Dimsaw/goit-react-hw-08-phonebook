@@ -7,11 +7,11 @@ const Home = () => {
   return (
     <div className={s.home}>
       {!isLoggedIn ? (
-        <h1>
+        <p className={s.text}>
           Hello, welcome to our simple phonebook service. If it's your first
           time here, you may register to have access to your phonebook. Also if
-          you are already registered, just Log in to your account.
-        </h1>
+          you are already registered, just Login to your account.
+        </p>
       ) : (
         <h1>Good to see you here, let's add some contacts</h1>
       )}

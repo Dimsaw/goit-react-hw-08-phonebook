@@ -70,7 +70,7 @@ export default function LogIn() {
           size="lg"
           disabled={isLoading}
         >
-          {isLoading ? 'Log ining...' : 'Log In'}
+          {isLoading ? 'Logining...' : 'Login'}
         </button>
       </form>
     </main>
