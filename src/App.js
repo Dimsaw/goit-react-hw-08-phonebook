@@ -5,7 +5,11 @@ import s from './App.module.css';
 
 import AppBar from './components/AppBar';
 import Loader from './components/Loader';
-import { PublicRoute, PrivateRoute, CustomRoute } from 'components/CustomRoute';
+import {
+  PublicRoute,
+  PrivateRoute,
+  CustomRoute,
+} from 'components/CustomRouter/CustomRoute';
 
 import { useGetCurrentUserMutation } from 'redux/services';
 import { getToken } from 'redux/selectors';

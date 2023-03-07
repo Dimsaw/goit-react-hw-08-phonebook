@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { useGetContactsQuery, useAddContactMutation } from 'redux/services';
 import { getFilter, getFilteredContacts } from 'redux/selectors';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import ContactsListItem from '../Contacts/ContactsListItem';
+import ContactsListItem from '../../components/ContactsListItem/ContactsListItem';
 import Filter from 'components/Filter';
 import Loader from 'components/Loader';
 
