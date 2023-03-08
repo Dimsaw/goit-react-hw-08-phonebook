@@ -15,5 +15,7 @@ export function PublicRoute({ children, restricted = false }) {
 
 export function CustomRoute() {
   const isLoggedIn = useSelector(getIsLoggedIn);
-  return <>{isLoggedIn ? <Navigate to="/" /> : <Navigate to={'login'} />}</>;
+  return (
+    <>{isLoggedIn ? <Navigate to="/contacts" /> : <Navigate to={'login'} />}</>
+  );
 }
