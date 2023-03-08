@@ -23,11 +23,17 @@ export default function Contacts() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    contacts.some(contact => contact.name === params.name)
-      ? Notify.failure(`Contact ${params.name} already exists`)
-      : contacts.some(contact => contact.number === params.number)
-      ? Notify.failure(`Contact with number ${params.number} already exists`)
-      : addContact(params);
+    if (contacts.some(contact => contact.name === params.name)) {
+      return Notify.failure(`Contact ${params.name} already exists`);
+    }
+
+    if (contacts.some(contact => contact.number === params.number)) {
+      return Notify.failure(
+        `Contact with number ${params.number} already exists`
+      );
+    }
+
+    addContact(params);
     setParams({ name: '', number: '' });
   }
 
